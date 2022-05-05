@@ -8,6 +8,9 @@ import Home from './component/Home-Pages/Home/Home';
 import Inventory from './component/Home-Pages/Inventory/Inventory';
 import Footer from './component/Shared/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
+import LogIn from './component/Page/LogIn/LogIn';
+import Register from './component/Page/Register/Register';
+import Blog from './component/Page/Blog/Blog';
 
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/login' element={<LogIn></LogIn>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
       </Routes>
       <Footer></Footer>
 
