@@ -18,7 +18,7 @@ const LogIn = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Submit
+          Log In
         </Button>
       </Form>
 
