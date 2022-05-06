@@ -33,15 +33,15 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
 
 
-        <Route path='/update' element={
+        <Route path='/update/:updateId' element={
           <RequireAuth>
             <Update></Update>
           </RequireAuth>
         }></Route>
 
-        <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
-        <Route path='/addItem' element={<AddItem></AddItem>}></Route>
-        <Route path='myItem' element={<MyItem></MyItem>}></Route>
+        <Route path='/manageItems' element={<RequireAuth><ManageItems></ManageItems></RequireAuth>}></Route>
+        <Route path='/addItem' element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
+        <Route path='myItem' element={<RequireAuth><MyItem></MyItem></RequireAuth>}></Route>
 
 
       </Routes>

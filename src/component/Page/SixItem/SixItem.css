@@ -2,3 +2,10 @@
   border: 1px solid gray;
   border-radius: 8px;
 }
+
+.six-item-style img {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+
+}

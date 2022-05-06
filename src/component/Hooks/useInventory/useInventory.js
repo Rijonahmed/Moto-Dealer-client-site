@@ -5,7 +5,7 @@ const useInventory = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('bikeinfo.json')
       .then(res => res.json())
       .then(data => setItems(data))
   }, [])
