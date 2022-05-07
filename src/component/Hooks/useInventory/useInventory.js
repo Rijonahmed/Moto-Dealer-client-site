@@ -11,7 +11,7 @@ const useInventory = () => {
   }, [])
 
 
-  return [items]
+  return [items, setItems]
 
 };
 

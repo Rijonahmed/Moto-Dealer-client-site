@@ -7,7 +7,7 @@ const SixItem = ({ item }) => {
   const navigate = useNavigate();
 
   const handleBtnUpdate = id => {
-    navigate('/update/' + id)
+    navigate('/inventory/' + id)
 
   }
   return (
