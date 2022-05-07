@@ -25,25 +25,32 @@ const Header = () => {
             </Nav>
             <Nav>
 
+              {
+                user && <>
+                  <Nav.Link as={Link} to="/manageItems">
+                    Manage Items
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/addItem">
+                    Add Item
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/myItem">
+                    My Item
+                  </Nav.Link>
+
+                </>
+              }
+
 
 
 
               {
                 user ?
-                  <span className='d-flex'>
-                    <Nav.Link as={Link} to="/manageItems">
-                      Manage Items
-                    </Nav.Link>
-                    <Nav.Link as={Link} to="/addItem">
-                      Add Item
-                    </Nav.Link>
-                    <Nav.Link as={Link} to="/myItem">
-                      My Item
-                    </Nav.Link>
-                    <Nav.Link onClick={handleSignOut}>Log Out
-                    </Nav.Link>
 
-                  </span>
+
+                  <Nav.Link onClick={handleSignOut}>Log Out
+                  </Nav.Link>
+
+
                   :
                   <Nav.Link as={Link} to="/login">
                     Log In

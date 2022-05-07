@@ -9,13 +9,21 @@ const Inventory = () => {
     <div>
       <h1>inventory section {items.length}</h1>
       <div className="inventory-container">
-        {
-          items.map(item => <Product
-            key={item.id}
-            item={item}
 
-          ></Product>)
+
+        {
+
+          items.map(item =>
+
+            <Product
+              key={item._id}
+              item={item}
+
+            ></Product>
+
+          )
         }
+
       </div>
 
 

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './SixItem.css'
 
 const SixItem = ({ item }) => {
-  const { id, name, price, quantity, images, supplier_name, text } = item;
+  const { _id, name, price, quantity, images, supplier_name, text } = item;
   const navigate = useNavigate();
 
   const handleBtnUpdate = id => {
@@ -19,7 +19,7 @@ const SixItem = ({ item }) => {
         <p>Quantity: {quantity}</p>
         <p>Description: {text}</p>
         <h5>Supplier Name: {supplier_name}</h5>
-        <button onClick={() => handleBtnUpdate(id)} type="button" class="btn btn-primary">Update</button>
+        <button onClick={() => handleBtnUpdate(_id)} type="button" class="btn btn-primary">Update</button>
       </span>
 
     </div>
