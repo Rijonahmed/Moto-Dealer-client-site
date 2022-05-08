@@ -18,7 +18,7 @@ const LogIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let form = location.state?.from?.pathname || "/update";
+  let form = location.state?.from?.pathname || "/";
   const [
     signInWithEmailAndPassword,
     user,

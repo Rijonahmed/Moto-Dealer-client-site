@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <div className='six-item'>
+      <div className='six-item container'>
         {
           sixItems.map(item => <SixItem
             key={item.id}

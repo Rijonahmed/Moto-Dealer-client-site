@@ -26,8 +26,8 @@ const ManageItems = () => {
     }
   }
   return (
-    <div>
-      <h1>{items.length}</h1>
+    <div className='container'>
+      <h1>Manage Items</h1>
       <Table striped bordered hover varian="dark">
         <thead>
           <tr>
@@ -35,6 +35,8 @@ const ManageItems = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Supplier Name</th>
+            <th>Email</th>
+
           </tr>
         </thead>
         <tbody>
@@ -47,7 +49,11 @@ const ManageItems = () => {
               <td>{item.price}</td>
               <td>{item.quantity}</td>
               <td>{item.supplier_name}</td>
-              <td><button onClick={() => handleDelete(item._id)}>Delete</button></td>
+              <td>{item.email}</td>
+              <td >
+
+                <button onClick={() => handleDelete(item._id)}>Delete</button></td>
+
             </tr>)
 
           }

@@ -1,10 +1,15 @@
-import React from 'react';
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const AddItem = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
+  const [user] = useAuthState(auth)
+
   const onSubmit = data => {
-    console.log(data);
+
     const url = 'http://localhost:5000/item';
     fetch(url, {
       method: 'POST',
@@ -17,23 +22,35 @@ const AddItem = () => {
     })
       .then(res => res.json())
       .then(result => {
+        reset();
+
+        toast('add item sucsess');
+
         console.log(result)
+
       })
+
+
 
   }
   return (
     <div className='w-50 mx-auto'>
       <h2>Add Item</h2>
       <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder='Name' className='mb-2' {...register("name", { required: true, maxLength: 20 })} />
 
-        <input placeholder='Price' className='mb-2' type="number" {...register("price")} />
-        <input placeholder='Quantity' className='mb-2' type="number" {...register("quantity")} />
-        <input placeholder='Images URL' className='mb-2' type="text" {...register("images")} />
-        <textarea placeholder='Description' className='mb-2' {...register("text")} />
-        <input placeholder='Supplier Name' className='mb-2' {...register("supplier_name", { required: true, maxLength: 20 })} />
+        <input placeholder='Name' className='mb-2' {...register("name", { required: true, maxLength: 20 })} required />
+
+        <input placeholder='Price' className='mb-2' type="number" {...register("price")} required />
+        <input placeholder='Quantity' className='mb-2' type="number" {...register("quantity")} required />
+        <input placeholder='Images URL' className='mb-2' type="text" {...register("images")} required />
+        <input value={user?.email} className='mb-2' type="text" {...register("email")} readOnly required />
+        <textarea placeholder='Description' className='mb-2' {...register("text")} required />
+        <input placeholder='Supplier Name' className='mb-2' {...register("supplier_name", { required: true, maxLength: 20 })} required />
         <input type="submit" value="Add Item" />
+
       </form>
+
+      <ToastContainer />
     </div>
   );
 };
