@@ -11,7 +11,7 @@ const Inventory = () => {
     const prosceed = window.confirm('Are you sure?');
     if (prosceed) {
       console.log('deleteing with id ', id)
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://lit-beach-00194.herokuapp.com/inventory/${id}`;
       const remaining = items.filter(item => item._id !== id);
       setItems(remaining);
 

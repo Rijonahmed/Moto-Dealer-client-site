@@ -10,7 +10,7 @@ const AddItem = () => {
 
   const onSubmit = data => {
 
-    const url = 'http://localhost:5000/item';
+    const url = 'https://lit-beach-00194.herokuapp.com/item';
     fetch(url, {
       method: 'POST',
       headers: {

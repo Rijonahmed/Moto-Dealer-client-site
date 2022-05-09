@@ -6,7 +6,7 @@ const Update = () => {
   const { updateId } = useParams();
   const [update, setUpdate] = useState({});
   const [isReload, setIsReload] = useState(true);
-  // const [sold, setSold] = useState();
+
 
 
 
@@ -53,9 +53,12 @@ const Update = () => {
 
   const handleDeliver = () => {
     let delivery = parseInt(update.quantity) - 1;
+
+
     const quantity = delivery;
-    // console.log(quantity)
-    // setSold(quantity)
+
+
+
 
     const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
 
