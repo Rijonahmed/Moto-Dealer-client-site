@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 const Update = () => {
   const { updateId } = useParams();
   const [update, setUpdate] = useState({});
-  const [isReload, setIsReload] = useState(true)
+  const [isReload, setIsReload] = useState(true);
+  // const [sold, setSold] = useState();
 
 
 
@@ -28,6 +29,7 @@ const Update = () => {
     const updateQuantity = (parseInt(update.quantity)) + parseInt(Inputquantity);
 
     const quantity = updateQuantity;
+
 
     const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
 
@@ -52,6 +54,8 @@ const Update = () => {
   const handleDeliver = () => {
     let delivery = parseInt(update.quantity) - 1;
     const quantity = delivery;
+    // console.log(quantity)
+    // setSold(quantity)
 
     const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
 
@@ -77,7 +81,9 @@ const Update = () => {
         <img className='w-50 my-3 rounded-circle' src={update.images} alt="" />
         <h1>Product Name: {update.name} </h1>
         <p>Price: {update.price} TK</p>
-        <p>Quantity: {update.quantity}</p>
+        <p>Quantity: {update.quantity}
+
+        </p>
         <p><span>Description:</span>{update.text}</p>
         <div className='d-flex justify-content-around mb-4'>
 
