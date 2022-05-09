@@ -2,6 +2,8 @@
 
 Moto Dealer Live Site[Live link](https://github.com/facebook/create-react-app).
 
+
+
 ## project information
 
 - In this project we are doing warehouse inventory of moto dealer.
@@ -14,4 +16,8 @@ Moto Dealer Live Site[Live link](https://github.com/facebook/create-react-app).
 
 In this project we have used bootstrap and react-bootstrap framework, recharts, react-toastify.
 We did firebase authentication, used react router, used firebase hooks, toast
+
+## server site
+
+server repository link [server link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Rijonahmed).
 
