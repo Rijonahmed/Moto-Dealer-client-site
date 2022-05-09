@@ -2,8 +2,10 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import useInventory from '../../Hooks/useInventory/useInventory';
 import './Inventory.css'
+import { Link } from 'react-router-dom';
 
 const Inventory = () => {
+
   const [items, setItems] = useInventory();
   const handleDelete = id => {
     const prosceed = window.confirm('Are you sure?');
@@ -25,12 +27,20 @@ const Inventory = () => {
 
     }
   }
+
+
+
+
+
   return (
     <div>
 
       <div className='container'>
         <h1>Manage All Inventory</h1>
-        <button>add new Item</button>
+        <Link to='/addItem'>
+          <button className='btn btn-outline-primary my-3 rounded-pill'>add new Item</button>
+        </Link>
+
         <Table striped bordered hover varian="dark">
           <thead>
             <tr>
@@ -55,7 +65,7 @@ const Inventory = () => {
                 <td>{item.text.slice(0, 15)}</td>
                 <td >
 
-                  <button onClick={() => handleDelete(item._id)}>Delete</button></td>
+                  <button className='btn btn-outline-danger' onClick={() => handleDelete(item._id)}>Delete</button></td>
 
               </tr>)
 

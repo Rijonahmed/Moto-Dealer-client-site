@@ -24,15 +24,15 @@ const Update = () => {
   const handleAddQuantity = e => {
     e.preventDefault();
 
-    const quantity = e.target.quantity.value;
+    const Inputquantity = e.target.quantity.value;
 
 
 
 
-    const updateQuantity = (parseInt(update.quantity)) + parseInt(quantity);
+    const updateQuantity = (parseInt(update.quantity)) + parseInt(Inputquantity);
 
-    const newUpdateQuantity = updateQuantity;
-    console.log('mot quantity', newUpdateQuantity)
+    const quantity = updateQuantity;
+    console.log('mot quantity', quantity)
 
 
     const url = `http://localhost:5000/inventory/${updateId}`
@@ -42,7 +42,7 @@ const Update = () => {
     fetch(url, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ newUpdateQuantity })
+      body: JSON.stringify({ quantity })
 
 
     })
@@ -61,9 +61,9 @@ const Update = () => {
 
 
   const handleDeliver = () => {
-    const delivery = (update.quantity) - 1;
-    const newDelivery = delivery;
-    console.log(newDelivery)
+    let delivery = parseInt(update.quantity) - 1;
+    const quantity = delivery;
+    console.log(quantity)
 
     const url = `http://localhost:5000/inventory/${updateId}`
     console.log(url)
@@ -71,7 +71,7 @@ const Update = () => {
     fetch(url, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ newDelivery })
+      body: JSON.stringify({ quantity })
 
     })
       .then(res => res.json())
@@ -87,19 +87,20 @@ const Update = () => {
     <div className='w-50 mx-auto border mt-4'>
       <div>
         <img className='w-50 my-3 rounded-circle' src={update.images} alt="" />
-        <h1>this is update: {update.name} </h1>
+        <h1>Product Name: {update.name} </h1>
         <p>Price: {update.price} TK</p>
         <p>Quantity: {update.quantity}</p>
         <p><span>Description:</span>{update.text}</p>
         <div className='d-flex justify-content-around mb-4'>
 
-          <button onClick={handleDeliver}>Deliver</button>
+          <button className='btn btn-outline-danger' onClick={handleDeliver}>Deliver</button>
 
           <div>
             <form onSubmit={handleAddQuantity}>
               <input type="number" name='quantity' placeholder='add Quantity' required />
+              <br />
 
-              <input type="submit" value="Add" />
+              <input className='btn btn-outline-primary mt-2' type="submit" value="Add" />
             </form>
           </div>
 

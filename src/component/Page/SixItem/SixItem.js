@@ -19,7 +19,7 @@ const SixItem = ({ item }) => {
         <p>Quantity: {quantity}</p>
         <p>Description: {text}</p>
         <h5>Supplier Name: {supplier_name}</h5>
-        <button onClick={() => handleBtnUpdate(_id)} type="button" class="btn btn-primary">Update</button>
+        <button onClick={() => handleBtnUpdate(_id)} type="button" className="btn btn-primary">Update</button>
       </span>
 
     </div>

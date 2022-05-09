@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import useInventory from '../../Hooks/useInventory/useInventory';
 
 const ManageItems = () => {
@@ -8,7 +9,7 @@ const ManageItems = () => {
   const handleDelete = id => {
     const prosceed = window.confirm('Are you sure?');
     if (prosceed) {
-      console.log('deleteing with id ', id)
+
       const url = `http://localhost:5000/inventory/${id}`;
       const remaining = items.filter(item => item._id !== id);
       setItems(remaining);
@@ -25,9 +26,14 @@ const ManageItems = () => {
 
     }
   }
+  const navigate = useNavigate();
+  const handleBtnUpdate = id => {
+    navigate('/inventory/' + id)
+
+  }
   return (
     <div className='container'>
-      <h1>Manage Items</h1>
+      <h2>Manage Items</h2>
       <Table striped bordered hover varian="dark">
         <thead>
           <tr>
@@ -51,8 +57,9 @@ const ManageItems = () => {
               <td>{item.supplier_name}</td>
               <td>{item.email}</td>
               <td >
+                <button onClick={() => handleBtnUpdate(item._id)} type="button" className="btn btn-primary mx-2">Update</button>
 
-                <button onClick={() => handleDelete(item._id)}>Delete</button></td>
+                <button className='btn btn-outline-danger' onClick={() => handleDelete(item._id)}>Delete</button></td>
 
             </tr>)
 

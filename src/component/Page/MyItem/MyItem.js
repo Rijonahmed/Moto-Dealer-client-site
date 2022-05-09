@@ -40,7 +40,7 @@ const MyItem = () => {
 
   return (
     <div className='container'>
-      <h1>{items.length}</h1>
+      <h2>My Items</h2>
       <Table striped bordered hover varian="dark">
         <thead>
           <tr>
@@ -65,7 +65,7 @@ const MyItem = () => {
 
               <td >
 
-                <button onClick={() => handleDelete(item._id)}>Delete</button></td>
+                <button className='btn btn-outline-danger' onClick={() => handleDelete(item._id)}>Delete</button></td>
 
             </tr>)
 
