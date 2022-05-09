@@ -14,10 +14,10 @@ const SixItem = ({ item }) => {
     <div className='six-item-style d-flex'>
       <img src={images} alt="" />
       <span className='m-3'>
-        <h2>Name: {name}</h2>
-        <p>Price: {price}</p>
+        <h3>{name}</h3>
+        <p>Price:$ {price} </p>
         <p>Quantity: {quantity}</p>
-        <p>Description: {text}</p>
+        <p><big>Description: </big> {text.slice(0, 50)}</p>
         <h5>Supplier Name: {supplier_name}</h5>
         <button onClick={() => handleBtnUpdate(_id)} type="button" className="btn btn-primary">Update</button>
       </span>

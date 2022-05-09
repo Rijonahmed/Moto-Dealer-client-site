@@ -11,7 +11,7 @@ const Update = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${updateId}`
+    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
 
     fetch(url)
       .then(res => res.json())
@@ -20,24 +20,16 @@ const Update = () => {
 
 
 
-
   const handleAddQuantity = e => {
     e.preventDefault();
 
     const Inputquantity = e.target.quantity.value;
 
-
-
-
     const updateQuantity = (parseInt(update.quantity)) + parseInt(Inputquantity);
 
     const quantity = updateQuantity;
-    console.log('mot quantity', quantity)
 
-
-    const url = `http://localhost:5000/inventory/${updateId}`
-    console.log(url)
-
+    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
 
     fetch(url, {
       method: 'PUT',
@@ -48,11 +40,8 @@ const Update = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log('success', data)
         alert('quantity added seccessfully');
         setIsReload(!isReload)
-
-
         e.target.reset();
       })
   }
@@ -63,10 +52,9 @@ const Update = () => {
   const handleDeliver = () => {
     let delivery = parseInt(update.quantity) - 1;
     const quantity = delivery;
-    console.log(quantity)
 
-    const url = `http://localhost:5000/inventory/${updateId}`
-    console.log(url)
+    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
+
 
     fetch(url, {
       method: 'PUT',
@@ -76,7 +64,7 @@ const Update = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log('success', data)
+
         setIsReload(!isReload)
       })
 

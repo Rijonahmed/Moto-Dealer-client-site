@@ -26,7 +26,7 @@ const AddItem = () => {
 
         toast('add item sucsess');
 
-        console.log(result)
+
 
       })
 

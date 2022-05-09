@@ -52,7 +52,7 @@ const ManageItems = () => {
             items.map(item => <tr
               key={item._id}>
               <td>{item.name}</td>
-              <td>{item.price}</td>
+              <td>$ {item.price}</td>
               <td>{item.quantity}</td>
               <td>{item.supplier_name}</td>
               <td>{item.email}</td>

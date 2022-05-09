@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useInventory from '../../Hooks/useInventory/useInventory';
 import About from '../../Page/About/About';
 import Rechart from '../../Page/Rechart/Rechart';
@@ -9,8 +10,18 @@ import './Home.css'
 
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [items] = useInventory();
   const sixItems = items.slice(0, 6);
+  if (!items) {
+    navigate('/loading');
+
+  }
+
+
+
+
   return (
     <div>
       <Banner></Banner>
@@ -18,9 +29,14 @@ const Home = () => {
       <h2 className='my-3'>Inventory Product </h2>
       <div className='six-item container'>
         {
+
+
+
           sixItems.map(item => <SixItem
-            key={item.id}
+            key={item._id}
             item={item}
+
+
           ></SixItem>)
         }
       </div>

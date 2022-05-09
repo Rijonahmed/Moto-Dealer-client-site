@@ -16,6 +16,7 @@ import RequireAuth from './component/Page/RequireAuth/RequireAuth';
 import ManageItems from './component/Page/ManageItems/ManageItems';
 import AddItem from './component/Page/AddItem/AddItem';
 import MyItem from './component/Page/MyItem/MyItem';
+import Loading from './component/Page/Loading/Loading';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/login' element={<LogIn></LogIn>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/loading' element={<Loading></Loading>}></Route>
 
 
         <Route path='/inventory/:updateId' element={

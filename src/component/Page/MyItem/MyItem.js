@@ -10,7 +10,7 @@ const MyItem = () => {
 
   useEffect(() => {
     const email = user.email
-    const url = `http://localhost:5000/inventory?email=${email}`
+    const url = `https://lit-beach-00194.herokuapp.com/inventory?email=${email}`
     fetch(url)
       .then(res => res.json())
       .then(data => setItems(data))
@@ -21,7 +21,7 @@ const MyItem = () => {
     const prosceed = window.confirm('Are you sure?');
     if (prosceed) {
       console.log('deleteing with id ', id)
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://lit-beach-00194.herokuapp.com/inventory/${id}`;
       const remaining = items.filter(item => item._id !== id);
       setItems(remaining);
 
@@ -30,10 +30,8 @@ const MyItem = () => {
       })
         .then(res => res.json())
         .then(data => {
-          console.log(data)
+
         })
-
-
 
     }
   }
@@ -59,7 +57,7 @@ const MyItem = () => {
               key={item._id}>
               <td>{item.name}</td>
               <td>{item.email}</td>
-              <td>{item.price}</td>
+              <td>$ {item.price}</td>
               <td>{item.quantity}</td>
               <td>{item.supplier_name}</td>
 
