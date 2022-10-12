@@ -25,8 +25,8 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <hr />
-      <h2 className='my-3'>Inventory Product </h2>
+
+      <h2 className='my-3 fw-bold'><span className='text-primary'>Inventory</span> Product </h2>
       <div className='six-item container'>
         {
 
