@@ -26,7 +26,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
 
-      <h2 className='my-3 fw-bold'><span className='text-primary'>Inventory</span> Product </h2>
+      <h2 className='my-4 fw-bold'><span className='text-primary'>Inventory</span> Product </h2>
       <div className='six-item container'>
         {
 
