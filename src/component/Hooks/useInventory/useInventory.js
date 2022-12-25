@@ -5,7 +5,7 @@ const useInventory = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://lit-beach-00194.herokuapp.com/inventory')
+    fetch('https://moto-dealer-server-site.vercel.app/inventory')
       .then(res => res.json())
       .then(data => setItems(data))
   }, [])

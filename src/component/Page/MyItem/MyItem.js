@@ -10,7 +10,7 @@ const MyItem = () => {
 
   useEffect(() => {
     const email = user.email
-    const url = `https://lit-beach-00194.herokuapp.com/inventory?email=${email}`
+    const url = `https://moto-dealer-server-site.vercel.app/inventory?email=${email}`
     fetch(url)
       .then(res => res.json())
       .then(data => setItems(data))
@@ -21,7 +21,7 @@ const MyItem = () => {
     const prosceed = window.confirm('Are you sure?');
     if (prosceed) {
       console.log('deleteing with id ', id)
-      const url = `https://lit-beach-00194.herokuapp.com/inventory/${id}`;
+      const url = `https://moto-dealer-server-site.vercel.app/inventory/${id}`;
       const remaining = items.filter(item => item._id !== id);
       setItems(remaining);
 

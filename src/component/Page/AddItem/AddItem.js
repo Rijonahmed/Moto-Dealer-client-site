@@ -10,7 +10,7 @@ const AddItem = () => {
 
   const onSubmit = data => {
 
-    const url = 'https://lit-beach-00194.herokuapp.com/item';
+    const url = 'https://moto-dealer-server-site.vercel.app/item';
     fetch(url, {
       method: 'POST',
       headers: {

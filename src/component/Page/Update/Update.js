@@ -12,7 +12,7 @@ const Update = () => {
 
 
   useEffect(() => {
-    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
+    const url = `https://moto-dealer-server-site.vercel.app/inventory/${updateId}`
 
     fetch(url)
       .then(res => res.json())
@@ -31,7 +31,7 @@ const Update = () => {
     const quantity = updateQuantity;
 
 
-    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
+    const url = `https://moto-dealer-server-site.vercel.app/inventory/${updateId}`
 
     fetch(url, {
       method: 'PUT',
@@ -60,7 +60,7 @@ const Update = () => {
 
 
 
-    const url = `https://lit-beach-00194.herokuapp.com/inventory/${updateId}`
+    const url = `https://moto-dealer-server-site.vercel.app/inventory/${updateId}`
 
 
     fetch(url, {
